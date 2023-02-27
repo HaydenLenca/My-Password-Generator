@@ -1,14 +1,18 @@
 var passwordLength = 8;
 var choice = [];
 
+// listed are all the charectors to use
 var specialChar = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.',':',';','<','?','>','=','@','[',']','_',];
 var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','t','z',];
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
 var number = ['1','2','3','4','5','6','7','8','9','0',];
 
+// generates button comand
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
+
+// function displays password
 function writePassword() {
     var correctPrompts = getPrompts();
     var passwordText = document.querySelector("#password");
@@ -21,8 +25,9 @@ function writePassword() {
     }
   }
 
-function generatePassword() {
 
+//   function creats the password
+function generatePassword() {
     var password = "";
     for(var i = 0; i < passwordLength; i++) {
         var randomIndex = Math.floor(Math.random() * choice.length)
@@ -31,6 +36,8 @@ function generatePassword() {
     return password;
 }
 
+
+// function gives prompts on screen to modify password
 function getPrompts(){
     choice = [];
 
