@@ -1,11 +1,11 @@
 var passwordLength = 8;
-var choice = [];
+var choiceArr = [];
 
 // listed are all the charectors to use
-var specialChar = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.',':',';','<','?','>','=','@','[',']','_',];
-var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','t','z',];
-var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
-var number = ['1','2','3','4','5','6','7','8','9','0',];
+var specialCharArr = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.',':',';','<','?','>','=','@','[',']','_',];
+var lowerCaseArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','t','z',];
+var upperCaseArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
+var numberArr = ['1','2','3','4','5','6','7','8','9','0',];
 
 // generates button comand
 var generateBtn = document.querySelector("#generate");
@@ -30,8 +30,8 @@ function writePassword() {
 function generatePassword() {
     var password = "";
     for(var i = 0; i < passwordLength; i++) {
-        var randomIndex = Math.floor(Math.random() * choice.length)
-        password = password + choice[randomIndex];
+        var randomIndex = Math.floor(Math.random() * choiceArr.length)
+        password = password + choiceArr[randomIndex];
     }
     return password;
 }
@@ -39,7 +39,7 @@ function generatePassword() {
 
 // function gives prompts on screen to modify password
 function getPrompts(){
-    choice = [];
+    choiceArr = [];
 
     passwordLength = parseInt(prompt("How many chacacters do yo want? (8 - 128) "));
 
@@ -49,16 +49,24 @@ function getPrompts(){
     }
 
     if (confirm("Would you like lowercase letters?")) {
-    choice = choice.concat(lowerCase);
+    choiceArr = choiceArr.concat(lowerCaseArr);
+    } else {
+
     }
     if (confirm("Would you like uppedrcase letters?")) {
-        choice = choice.concat(upperCase);
+        choiceArr = choiceArr.concat(upperCaseArr);
+    } else {
+
     }
     if (confirm("Would you like special chacacters?")) {
-        choice = choice.concat(specialChar);
+        choiceArr = choiceArr.concat(specialCharArr);
+    } else {
+
     }
     if (confirm("Would you like numbers?")) {
-        choice = choice.concat(number);
+        choiceArr = choiceArr.concat(numberArr);
+    } else {
+        
     }
     return true;
 
