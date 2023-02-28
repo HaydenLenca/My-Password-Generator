@@ -28,6 +28,6 @@ N/A
 
 Please refer to the LICENSE in the repo.
 
-![Basic Page](./Assets/Images/Screenshot%20(11).png)
-![Page with Options](./Assets/Images/Screenshot%20(12).png)
-![Page with Password](./Assets/Images/Screenshot%20(13).png)
+![Basic Page](./Assets/Images/Password-start.png)
+![Page with Options](./Assets/Images/Password-prompts.png)
+![Page with Password](./Assets/Images/Password-display.png)
